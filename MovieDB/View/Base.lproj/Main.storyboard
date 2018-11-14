@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hxx-P0-EP8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,60 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Now Playing Collection View Controller-->
-        <scene sceneID="naL-3I-dYv">
-            <objects>
-                <collectionViewController id="Yjv-nU-OWe" customClass="NowPlayingCollectionViewController" customModule="MovieDB" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xwy-S5-ghM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pr2-TH-PhD">
-                            <size key="itemSize" width="242" height="120"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="YYL-yO-Jrd" customClass="CustomCollectionViewCell" customModule="MovieDB" customModuleProvider="target">
-                                <rect key="frame" x="66.5" y="0.0" width="242" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="242" height="120"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cgJ-lr-XnJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="242" height="120"/>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="cgJ-lr-XnJ" firstAttribute="leading" secondItem="YYL-yO-Jrd" secondAttribute="leading" id="1wq-8B-xxO"/>
-                                    <constraint firstAttribute="bottom" secondItem="cgJ-lr-XnJ" secondAttribute="bottom" id="TrC-4P-btn"/>
-                                    <constraint firstItem="cgJ-lr-XnJ" firstAttribute="top" secondItem="YYL-yO-Jrd" secondAttribute="top" id="WXM-Of-6F9"/>
-                                    <constraint firstAttribute="trailing" secondItem="cgJ-lr-XnJ" secondAttribute="trailing" id="ujT-AM-gwo"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="poster" destination="cgJ-lr-XnJ" id="Kkm-kZ-kZA"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="Yjv-nU-OWe" id="8tC-Sg-Erf"/>
-                            <outlet property="delegate" destination="Yjv-nU-OWe" id="QB0-sl-Lop"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="m4d-d1-f0x"/>
-                    <connections>
-                        <outlet property="flowLayout" destination="Pr2-TH-PhD" id="gLe-32-mEd"/>
-                        <outlet property="movieCollectionView" destination="xwy-S5-ghM" id="WKH-UH-fOQ"/>
-                        <segue destination="mcd-rP-ZjL" kind="show" identifier="MovieDetail" id="i9U-Q8-DVI"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0M3-Gm-ePF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2328.8000000000002" y="-884.70764617691157"/>
-        </scene>
         <!--Detail View Controller-->
         <scene sceneID="9C5-fQ-OB7">
             <objects>
@@ -73,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="6RV-Nw-m7s">
-                                <rect key="frame" x="0.0" y="116" width="375" height="278.5"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="278.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XwG-nA-YEA">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="212"/>
@@ -113,33 +59,14 @@
                         <viewLayoutGuide key="safeArea" id="gUb-8e-ecd"/>
                     </view>
                     <connections>
-                        <outlet property="movieBackdrop" destination="XwG-nA-YEA" id="fOT-iL-9KV"/>
-                        <outlet property="moviePlot" destination="Osr-xn-0FU" id="zoi-jO-vjR"/>
-                        <outlet property="movieTitle" destination="rk2-da-5qF" id="CbD-YN-647"/>
+                        <outlet property="movieBackdrop" destination="XwG-nA-YEA" id="dWv-II-utc"/>
+                        <outlet property="moviePlot" destination="Osr-xn-0FU" id="blr-8n-Y29"/>
+                        <outlet property="movieTitle" destination="rk2-da-5qF" id="y00-u6-cV4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibW-cx-mAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3140" y="-886.50674662668678"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="nrp-va-xt3">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hxx-P0-EP8" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="B6N-Fw-8J1">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Yjv-nU-OWe" kind="relationship" relationship="rootViewController" id="Gxq-VW-8fB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wMk-31-Ge0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1389.5999999999999" y="-885.60719640179911"/>
+            <point key="canvasLocation" x="4079.1999999999998" y="-886.50674662668678"/>
         </scene>
     </scenes>
 </document>
