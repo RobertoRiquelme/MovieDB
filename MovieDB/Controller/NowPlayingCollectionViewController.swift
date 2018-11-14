@@ -8,17 +8,19 @@
 
 import UIKit
 
-class NowPlayingCollectionViewController: UICollectionViewController {
+class NowPlayingCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    @IBOutlet var movieCollectionView: UICollectionView!
-    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    var movieCollectionView: UICollectionView!
 
     var movies: [Movie] = [Movie]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        setupLayout()
+
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -33,15 +35,25 @@ class NowPlayingCollectionViewController: UICollectionViewController {
         self.navigationController?.navigationBar.topItem?.title = "Movies"
         self.navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
     }
 
     func setupLayout() {
         let space:CGFloat = 0.0
         let numberOfColumns:CGFloat = 2.0
         let itemWidth = (view.frame.size.width - (numberOfColumns - 1)) / numberOfColumns
+
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth * 1.5)
+
+        movieCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout)
+        movieCollectionView.dataSource = self
+        movieCollectionView.delegate = self
+        movieCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
+        movieCollectionView.backgroundColor = UIColor.black
+        self.view.addSubview(movieCollectionView)
     }
 
     func fetchMovies () {
@@ -57,23 +69,23 @@ class NowPlayingCollectionViewController: UICollectionViewController {
         }
     }
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cellReuseIdentifier = "collectionCell"
         let movie = movies[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! CustomCollectionViewCell
-
-        cell.poster!.contentMode = UIView.ContentMode.scaleAspectFit
-
+        let imageView = UIImageView(frame: CGRect(x:0, y:0, width:cell.frame.size.width, height:cell.frame.size.height))
         if let posterPath = movie.posterPath {
             Client.sharedInstance().fetchImage(path: posterPath, size: Client.PosterConstants.RowPoster, completion: { (imageData) in
                 if let image = imageData {
                     DispatchQueue.main.async {
-                        cell.poster!.image = image
+                        imageView.image = image
+                        imageView.contentMode = UIView.ContentMode.scaleAspectFit
+                        cell.addSubview(imageView)
                     }
                 } else {
                     print("error")
@@ -83,14 +95,16 @@ class NowPlayingCollectionViewController: UICollectionViewController {
         return cell
     }
 
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller: DetailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        controller.movie = movies[indexPath.row]
-        navigationController?.pushViewController(controller, animated: true)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+        let cellMovie = movies[indexPath.row]
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        controller.movie = cellMovie
+        navigationController?.pushViewController(controller, animated: true)
     }
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    //override
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         var numberOfSections = 0
         if movies.count > 0 {
             numberOfSections = 1

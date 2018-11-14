@@ -9,6 +9,19 @@
 import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var poster: UIImageView!
-    
+   // @IBOutlet weak var poster: UIImageView!
+    public var poster: UIImageView!
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        poster = UIImageView()
+    }
+
+    func addImage(){
+        addSubview(poster)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

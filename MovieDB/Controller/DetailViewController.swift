@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var movieBackdrop: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var moviePlot: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
