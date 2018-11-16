@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B4E3D402198E7DE00C6CEFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4E3D3F2198E7DE00C6CEFC /* AppDelegate.swift */; };
-		1B4E3D452198E7DE00C6CEFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4E3D432198E7DE00C6CEFC /* Main.storyboard */; };
 		1B4E3D472198E7E100C6CEFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4E3D462198E7E100C6CEFC /* Assets.xcassets */; };
 		1B4E3D4A2198E7E100C6CEFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4E3D482198E7E100C6CEFC /* LaunchScreen.storyboard */; };
 		1B4E3D722198F59F00C6CEFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4E3D712198F59F00C6CEFC /* Constants.swift */; };
@@ -38,20 +37,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B4E3D3C2198E7DE00C6CEFC /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MovieDB.app; path = "/Users/robertoriquelme/Documents/Developer/getaround/MovieDB/build/Debug-iphoneos/MovieDB.app"; sourceTree = "<absolute>"; };
 		1B4E3D3F2198E7DE00C6CEFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B4E3D442198E7DE00C6CEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B4E3D462198E7E100C6CEFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B4E3D492198E7E100C6CEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B4E3D4B2198E7E100C6CEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B4E3D502198E7E100C6CEFC /* MovieDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MovieDBTests.xctest; path = "/Users/robertoriquelme/Documents/Developer/getaround/MovieDB/build/Debug-iphoneos/MovieDBTests.xctest"; sourceTree = "<absolute>"; };
-		1B4E3D5B2198E7E100C6CEFC /* MovieDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MovieDBUITests.xctest; path = "/Users/robertoriquelme/Documents/Developer/getaround/MovieDB/build/Debug-iphoneos/MovieDBUITests.xctest"; sourceTree = "<absolute>"; };
 		1B4E3D712198F59F00C6CEFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1BCBEBDC219A5C1200430EE7 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		1BCBEBDE219A5C9000430EE7 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		1BCBEBE0219A6DF900430EE7 /* NowPlayingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCollectionViewController.swift; sourceTree = "<group>"; };
 		1BCBEBE2219A704900430EE7 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		1BCBEBE4219A846700430EE7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1BE05E20219E4B12002C0672 /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BE05E21219E4B12002C0672 /* MovieDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BE05E22219E4B12002C0672 /* MovieDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		294C497166CF80C97E22E616 /* Pods-MovieDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieDB/Pods-MovieDB.debug.xcconfig"; sourceTree = "<group>"; };
 		2DB53546C3F5322788670325 /* Pods_MovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4719E091517EAB4D842B9B20 /* Pods-MovieDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDB.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieDB/Pods-MovieDB.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +87,9 @@
 				1B4E3D3E2198E7DE00C6CEFC /* MovieDB */,
 				FF649F5816B140AEC36CCF4D /* Pods */,
 				B0049B96790B43E224C0502E /* Frameworks */,
+				1BE05E20219E4B12002C0672 /* MovieDB.app */,
+				1BE05E21219E4B12002C0672 /* MovieDBTests.xctest */,
+				1BE05E22219E4B12002C0672 /* MovieDBUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,7 +128,6 @@
 		1B4E3D7421990C9900C6CEFC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1B4E3D432198E7DE00C6CEFC /* Main.storyboard */,
 				1B4E3D482198E7E100C6CEFC /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -194,7 +194,7 @@
 			);
 			name = MovieDB;
 			productName = MovieDB;
-			productReference = 1B4E3D3C2198E7DE00C6CEFC /* MovieDB.app */;
+			productReference = 1BE05E20219E4B12002C0672 /* MovieDB.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1B4E3D4F2198E7E100C6CEFC /* MovieDBTests */ = {
@@ -212,7 +212,7 @@
 			);
 			name = MovieDBTests;
 			productName = MovieDBTests;
-			productReference = 1B4E3D502198E7E100C6CEFC /* MovieDBTests.xctest */;
+			productReference = 1BE05E21219E4B12002C0672 /* MovieDBTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		1B4E3D5A2198E7E100C6CEFC /* MovieDBUITests */ = {
@@ -230,7 +230,7 @@
 			);
 			name = MovieDBUITests;
 			productName = MovieDBUITests;
-			productReference = 1B4E3D5B2198E7E100C6CEFC /* MovieDBUITests.xctest */;
+			productReference = 1BE05E22219E4B12002C0672 /* MovieDBUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -283,7 +283,6 @@
 			files = (
 				1B4E3D4A2198E7E100C6CEFC /* LaunchScreen.storyboard in Resources */,
 				1B4E3D472198E7E100C6CEFC /* Assets.xcassets in Resources */,
-				1B4E3D452198E7DE00C6CEFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +336,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MovieDB/Pods-MovieDB-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -344,6 +344,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -397,14 +398,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1B4E3D432198E7DE00C6CEFC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1B4E3D442198E7DE00C6CEFC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1B4E3D482198E7E100C6CEFC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

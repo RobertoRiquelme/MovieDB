@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NowPlayingCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class NowPlayingCollectionViewController: UIViewController {
 
     var movieCollectionView: UICollectionView!
 
@@ -16,7 +16,6 @@ class NowPlayingCollectionViewController: UIViewController, UICollectionViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -68,6 +67,9 @@ class NowPlayingCollectionViewController: UIViewController, UICollectionViewData
             }
         }
     }
+}
+
+extension NowPlayingCollectionViewController:  UICollectionViewDataSource, UICollectionViewDelegate{
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
@@ -98,12 +100,12 @@ class NowPlayingCollectionViewController: UIViewController, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let cellMovie = movies[indexPath.row]
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        let controller = DetailViewController()
         controller.movie = cellMovie
         navigationController?.pushViewController(controller, animated: true)
+        //navigationController?.show(controller, sender: self)
     }
 
-    //override
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         var numberOfSections = 0
         if movies.count > 0 {

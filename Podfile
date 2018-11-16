@@ -3,6 +3,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'MovieDB' do
-    pod 'Alamofire'
-    pod 'AlamofireImage'
+    pod "Alamofire"
+    pod "AlamofireImage"
+    pod "TinyConstraints"
 end
