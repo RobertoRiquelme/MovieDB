@@ -16,12 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let nowPlaying = NowPlayingCollectionViewController()
-        let navigationController = UINavigationController(rootViewController: nowPlaying)
-
+        let tabBar = TabBarViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationController
-        navigationController.navigationBar.barStyle = .blackTranslucent
+        window?.rootViewController = tabBar
+
         window?.makeKeyAndVisible()
 
         return true

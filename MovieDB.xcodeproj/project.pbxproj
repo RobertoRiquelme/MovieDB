@@ -11,6 +11,8 @@
 		1B4E3D472198E7E100C6CEFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4E3D462198E7E100C6CEFC /* Assets.xcassets */; };
 		1B4E3D4A2198E7E100C6CEFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4E3D482198E7E100C6CEFC /* LaunchScreen.storyboard */; };
 		1B4E3D722198F59F00C6CEFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4E3D712198F59F00C6CEFC /* Constants.swift */; };
+		1B9599B9219F7A4400F467B0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9599B8219F7A4400F467B0 /* SearchViewController.swift */; };
+		1B9599BB219F7ABF00F467B0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9599BA219F7ABF00F467B0 /* TabBarViewController.swift */; };
 		1BCBEBDD219A5C1200430EE7 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBEBDC219A5C1200430EE7 /* Client.swift */; };
 		1BCBEBDF219A5C9000430EE7 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBEBDE219A5C9000430EE7 /* Movie.swift */; };
 		1BCBEBE1219A6DF900430EE7 /* NowPlayingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBEBE0219A6DF900430EE7 /* NowPlayingCollectionViewController.swift */; };
@@ -42,6 +44,8 @@
 		1B4E3D492198E7E100C6CEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B4E3D4B2198E7E100C6CEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B4E3D712198F59F00C6CEFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1B9599B8219F7A4400F467B0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		1B9599BA219F7ABF00F467B0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1BCBEBDC219A5C1200430EE7 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		1BCBEBDE219A5C9000430EE7 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		1BCBEBE0219A6DF900430EE7 /* NowPlayingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCollectionViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				1BCBEBE0219A6DF900430EE7 /* NowPlayingCollectionViewController.swift */,
 				1BCBEBE4219A846700430EE7 /* DetailViewController.swift */,
 				1BCBEBE2219A704900430EE7 /* CustomCollectionViewCell.swift */,
+				1B9599B8219F7A4400F467B0 /* SearchViewController.swift */,
+				1B9599BA219F7ABF00F467B0 /* TabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -360,7 +366,9 @@
 			files = (
 				1BCBEBE1219A6DF900430EE7 /* NowPlayingCollectionViewController.swift in Sources */,
 				1BCBEBE3219A704900430EE7 /* CustomCollectionViewCell.swift in Sources */,
+				1B9599B9219F7A4400F467B0 /* SearchViewController.swift in Sources */,
 				1B4E3D402198E7DE00C6CEFC /* AppDelegate.swift in Sources */,
+				1B9599BB219F7ABF00F467B0 /* TabBarViewController.swift in Sources */,
 				1BCBEBDF219A5C9000430EE7 /* Movie.swift in Sources */,
 				1B4E3D722198F59F00C6CEFC /* Constants.swift in Sources */,
 				1BCBEBDD219A5C1200430EE7 /* Client.swift in Sources */,

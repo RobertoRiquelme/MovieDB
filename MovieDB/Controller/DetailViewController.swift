@@ -50,6 +50,7 @@ class DetailViewController: UIViewController{
     func setupNavigation(){
         self.navigationController?.navigationBar.topItem?.title = "Movies"
         self.navigationController?.navigationBar.prefersLargeTitles = false
+
         view.backgroundColor = UIColor.black
     }
 

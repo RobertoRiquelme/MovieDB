@@ -16,6 +16,7 @@ class NowPlayingCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Now Playing"
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -35,6 +36,7 @@ class NowPlayingCollectionViewController: UIViewController {
         self.navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.barTintColor = UIColor.black
+        self.navigationController?.navigationBar.barStyle = .blackTranslucent
     }
 
     func setupLayout() {
@@ -102,8 +104,8 @@ extension NowPlayingCollectionViewController:  UICollectionViewDataSource, UICol
         let cellMovie = movies[indexPath.row]
         let controller = DetailViewController()
         controller.movie = cellMovie
+        controller.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(controller, animated: true)
-        //navigationController?.show(controller, sender: self)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
