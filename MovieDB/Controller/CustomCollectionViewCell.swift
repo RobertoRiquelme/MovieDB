@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
-   // @IBOutlet weak var poster: UIImageView!
+
     public var poster: UIImageView!
 
     override init(frame: CGRect) {

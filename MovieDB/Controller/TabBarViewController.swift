@@ -24,14 +24,16 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         nowPlayingNavigation.tabBarItem = tabNowPlayingItem
 
         let tabSearch = SearchViewController()
+        let searchNavigation = UINavigationController(rootViewController: tabSearch)
         let tabSearchItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
-        tabSearch.tabBarItem = tabSearchItem
+        searchNavigation.tabBarItem = tabSearchItem
 
-        self.viewControllers = [nowPlayingNavigation, tabSearch]
+        self.viewControllers = [nowPlayingNavigation, searchNavigation]
     }
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("Selected \(viewController.title!)")
+        
+       // print("Selected \(viewController.title!)")
     }
 
 }

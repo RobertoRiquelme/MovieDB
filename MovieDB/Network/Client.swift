@@ -18,7 +18,7 @@ class Client {
 
         Alamofire.request(
             tmdbURL(withPathExtension: Methods.NowPlaying),
-            method: .get,
+            method: .get,   
             parameters: parameters)
             .validate()
             .responseJSON { (response) in
