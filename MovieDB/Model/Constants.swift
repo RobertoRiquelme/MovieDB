@@ -19,6 +19,7 @@ extension Client {
 
     struct Methods {
         static let NowPlaying = "/movie/now_playing"
+        static let SearchMovie = "/search/movie"
         static let Config = "/configuration"
     }
 

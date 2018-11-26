@@ -39,6 +39,36 @@ class Client {
 
     }
 
+    func searchMovies (with query:String, completion: @escaping ([Movie]?) -> Void) {
+        var parameters = [String:Any]()
+        parameters [ParameterKeys.ApiKey] = Constants.ApiKey as Any
+        parameters [ParameterKeys.Query] = query as Any
+
+        let req = Alamofire.request(
+            tmdbURL(withPathExtension: Methods.SearchMovie),
+            method: .get,
+            parameters: parameters)
+            .validate()
+            .responseJSON { (response) in
+                debugPrint("RESPONSE: \(response)")
+                guard response.result.isSuccess else {
+                    print("Error while fetching movies: \(String(describing: response.result.error))")
+                    completion(nil)
+                    return
+                }
+                guard let result = response.result.value as? [String: Any],
+                    let movies = result["results"] as? [[String: Any]] else {
+                        print("Malformed data received from fetchMovies service")
+                        completion(nil)
+                        return
+                }
+                let moviesArray = Movie.moviesFromResults(movies)
+                completion(moviesArray)
+        }
+        debugPrint(req)
+
+    }
+
     func fetchImage (path: String, size: String, completion: @escaping (UIImage?) -> Void) {
         let baseURL: URL = URL(string: PosterConstants.secureBaseImageURLString)!
         let url = baseURL.appendingPathComponent(size).appendingPathComponent(path)

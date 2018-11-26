@@ -11,6 +11,7 @@ import UIKit
 class SearchViewController: UIViewController, UISearchResultsUpdating{
 
     var searchController: UISearchController!
+    var movies: [Movie] = [Movie]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,26 @@ class SearchViewController: UIViewController, UISearchResultsUpdating{
     }
 
     func updateSearchResults(for searchController: UISearchController) {
-        debugPrint("Searching...\(searchController.searchBar.text!)")
+        let searchString = searchController.searchBar.text!
+        debugPrint("Searching...\(searchString)")
+        switch searchString{
+        case "":
+            break
+        default:
+            searchMovies(with: searchString)
+        }
+    }
+
+    func searchMovies (with query: String) {
+        Client.sharedInstance().searchMovies(with:query) { (movies) in
+            if let movies = movies {
+                self.movies = movies
+                DispatchQueue.main.async {
+                    //self.movieCollectionView.reloadData()
+                }
+            } else {
+                print("error occured while fetching movies")
+            }
+        }
     }
 }
