@@ -8,15 +8,15 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchResultsUpdating{
+class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchControllerDelegate{
 
     var searchController: UISearchController!
     var movies: [Movie] = [Movie]()
-
     var movieCollectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        debugPrint("VDL")
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -25,30 +25,40 @@ class SearchViewController: UIViewController, UISearchResultsUpdating{
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        debugPrint("VWA")
         setupView()
         setupSearch()
         setupLayout()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+
     }
 
     func setupView() {
         self.navigationController?.navigationBar.barTintColor = UIColor.black
         self.navigationController?.navigationBar.barStyle = .blackTranslucent
         self.navigationController?.navigationBar.prefersLargeTitles = false
+
     }
 
     func setupSearch(){
-        self.definesPresentationContext = true
-        searchController = UISearchController(searchResultsController: nil)
+        searchController = NoCancelButtonSearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = true
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Movies..."
         searchController.searchBar.sizeToFit()
         searchController.searchBar.barStyle = .blackTranslucent
+        //searchController.searchBar.searchBarStyle = .minimal
+        searchController.searchBar.text = ""
+        searchController.searchBar.showsCancelButton = false
+        searchController.delegate = self
 
+        self.definesPresentationContext = true
         self.navigationItem.hidesSearchBarWhenScrolling = false;
         self.navigationItem.searchController = searchController
-        searchController.isActive = true
+        self.navigationController?.navigationBar.isTranslucent = false
     }
 
     func setupLayout() {
@@ -70,8 +80,8 @@ class SearchViewController: UIViewController, UISearchResultsUpdating{
     }
 
     func updateSearchResults(for searchController: UISearchController) {
-        let searchString = searchController.searchBar.text!
-        debugPrint("Searching...\(searchString)")
+        guard let searchString = searchController.searchBar.text else { return }
+        debugPrint("updateSearchResults...\(searchString)")
         switch searchString{
         case "":
             break
@@ -92,6 +102,15 @@ class SearchViewController: UIViewController, UISearchResultsUpdating{
             }
         }
     }
+}
+
+class NoCancelButtonSearchController: UISearchController {
+    let noCancelButtonSearchBar = NoCancelButtonSearchBar()
+    override var searchBar: UISearchBar { return noCancelButtonSearchBar }
+}
+
+class NoCancelButtonSearchBar: UISearchBar {
+    override func setShowsCancelButton(_ showsCancelButton: Bool, animated: Bool) { /* void */ }
 }
 
 extension SearchViewController:  UICollectionViewDataSource, UICollectionViewDelegate{

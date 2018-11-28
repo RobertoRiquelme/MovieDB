@@ -1,5 +1,5 @@
 //
-//  NowPlayingCollectionViewController.swift
+//  NowPlayingCollectionViewController.siswift
 //  MovieDB
 //
 //  Created by Roberto Riquelme on 11/12/18.
@@ -49,6 +49,7 @@ class NowPlayingCollectionViewController: UIViewController {
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth * 1.5)
 
+        self.definesPresentationContext = true
         movieCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: flowLayout)
         movieCollectionView.dataSource = self
         movieCollectionView.delegate = self
